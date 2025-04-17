@@ -425,20 +425,20 @@ async def list_tools() -> list[Tool]:
                         "required": ["parent_id"],
                     },
                 ),
-                Tool(
-                    name="confluence_get_page_ancestors",
-                    description="Get ancestor (parent) pages of a specific Confluence page",
-                    inputSchema={
-                        "type": "object",
-                        "properties": {
-                            "page_id": {
-                                "type": "string",
-                                "description": "The ID of the page whose ancestors you want to retrieve",
-                            },
-                        },
-                        "required": ["page_id"],
-                    },
-                ),
+                # Tool(
+                #     name="confluence_get_page_ancestors",
+                #     description="Get ancestor (parent) pages of a specific Confluence page",
+                #     inputSchema={
+                #         "type": "object",
+                #         "properties": {
+                #             "page_id": {
+                #                 "type": "string",
+                #                 "description": "The ID of the page whose ancestors you want to retrieve",
+                #             },
+                #         },
+                #         "required": ["page_id"],
+                #     },
+                # ),
                 Tool(
                     name="confluence_get_comments",
                     description="Get comments for a specific Confluence page",
@@ -524,43 +524,43 @@ async def list_tools() -> list[Tool]:
                             "required": ["page_id", "title", "content"],
                         },
                     ),
-                    Tool(
-                        name="confluence_delete_page",
-                        description="Delete an existing Confluence page",
-                        inputSchema={
-                            "type": "object",
-                            "properties": {
-                                "page_id": {
-                                    "type": "string",
-                                    "description": "The ID of the page to delete",
-                                },
-                            },
-                            "required": ["page_id"],
-                        },
-                    ),
-                    Tool(
-                        name="confluence_attach_content",
-                        description="Attach content to a Confluence page",
-                        inputSchema={
-                            "type": "object",
-                            "properties": {
-                                "content": {
-                                    "type": "string",
-                                    "format": "binary",
-                                    "description": "The content to attach (bytes)",
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the attachment",
-                                },
-                                "page_id": {
-                                    "type": "string",
-                                    "description": "The ID of the page to attach the content to",
-                                },
-                            },
-                            "required": ["content", "name", "page_id"],
-                        },
-                    ),
+                    # Tool(
+                    #     name="confluence_delete_page",
+                    #     description="Delete an existing Confluence page",
+                    #     inputSchema={
+                    #         "type": "object",
+                    #         "properties": {
+                    #             "page_id": {
+                    #                 "type": "string",
+                    #                 "description": "The ID of the page to delete",
+                    #             },
+                    #         },
+                    #         "required": ["page_id"],
+                    #     },
+                    # ),
+                    # Tool(
+                    #     name="confluence_attach_content",
+                    #     description="Attach content to a Confluence page",
+                    #     inputSchema={
+                    #         "type": "object",
+                    #         "properties": {
+                    #             "content": {
+                    #                 "type": "string",
+                    #                 "format": "binary",
+                    #                 "description": "The content to attach (bytes)",
+                    #             },
+                    #             "name": {
+                    #                 "type": "string",
+                    #                 "description": "The name of the attachment",
+                    #             },
+                    #             "page_id": {
+                    #                 "type": "string",
+                    #                 "description": "The ID of the page to attach the content to",
+                    #             },
+                    #         },
+                    #         "required": ["content", "name", "page_id"],
+                    #     },
+                    # ),
                 ]
             )
 
@@ -664,74 +664,74 @@ async def list_tools() -> list[Tool]:
                         "required": ["jql"],
                     },
                 ),
-                Tool(
-                    name="jira_get_project_issues",
-                    description="Get all issues for a specific Jira project",
-                    inputSchema={
-                        "type": "object",
-                        "properties": {
-                            "project_key": {
-                                "type": "string",
-                                "description": "The project key",
-                            },
-                            "limit": {
-                                "type": "number",
-                                "description": "Maximum number of results (1-50)",
-                                "default": 10,
-                                "minimum": 1,
-                                "maximum": 50,
-                            },
-                            "startAt": {
-                                "type": "number",
-                                "description": "Starting index for pagination (0-based)",
-                                "default": 0,
-                                "minimum": 0,
-                            },
-                        },
-                        "required": ["project_key"],
-                    },
-                ),
-                Tool(
-                    name="jira_get_epic_issues",
-                    description="Get all issues linked to a specific epic",
-                    inputSchema={
-                        "type": "object",
-                        "properties": {
-                            "epic_key": {
-                                "type": "string",
-                                "description": "The key of the epic (e.g., 'PROJ-123')",
-                            },
-                            "limit": {
-                                "type": "number",
-                                "description": "Maximum number of issues to return (1-50)",
-                                "default": 10,
-                                "minimum": 1,
-                                "maximum": 50,
-                            },
-                            "startAt": {
-                                "type": "number",
-                                "description": "Starting index for pagination (0-based)",
-                                "default": 0,
-                                "minimum": 0,
-                            },
-                        },
-                        "required": ["epic_key"],
-                    },
-                ),
-                Tool(
-                    name="jira_get_transitions",
-                    description="Get available status transitions for a Jira issue",
-                    inputSchema={
-                        "type": "object",
-                        "properties": {
-                            "issue_key": {
-                                "type": "string",
-                                "description": "Jira issue key (e.g., 'PROJ-123')",
-                            },
-                        },
-                        "required": ["issue_key"],
-                    },
-                ),
+                # Tool(
+                #     name="jira_get_project_issues",
+                #     description="Get all issues for a specific Jira project",
+                #     inputSchema={
+                #         "type": "object",
+                #         "properties": {
+                #             "project_key": {
+                #                 "type": "string",
+                #                 "description": "The project key",
+                #             },
+                #             "limit": {
+                #                 "type": "number",
+                #                 "description": "Maximum number of results (1-50)",
+                #                 "default": 10,
+                #                 "minimum": 1,
+                #                 "maximum": 50,
+                #             },
+                #             "startAt": {
+                #                 "type": "number",
+                #                 "description": "Starting index for pagination (0-based)",
+                #                 "default": 0,
+                #                 "minimum": 0,
+                #             },
+                #         },
+                #         "required": ["project_key"],
+                #     },
+                # ),
+                # Tool(
+                #     name="jira_get_epic_issues",
+                #     description="Get all issues linked to a specific epic",
+                #     inputSchema={
+                #         "type": "object",
+                #         "properties": {
+                #             "epic_key": {
+                #                 "type": "string",
+                #                 "description": "The key of the epic (e.g., 'PROJ-123')",
+                #             },
+                #             "limit": {
+                #                 "type": "number",
+                #                 "description": "Maximum number of issues to return (1-50)",
+                #                 "default": 10,
+                #                 "minimum": 1,
+                #                 "maximum": 50,
+                #             },
+                #             "startAt": {
+                #                 "type": "number",
+                #                 "description": "Starting index for pagination (0-based)",
+                #                 "default": 0,
+                #                 "minimum": 0,
+                #             },
+                #         },
+                #         "required": ["epic_key"],
+                #     },
+                # ),
+                # Tool(
+                #     name="jira_get_transitions",
+                #     description="Get available status transitions for a Jira issue",
+                #     inputSchema={
+                #         "type": "object",
+                #         "properties": {
+                #             "issue_key": {
+                #                 "type": "string",
+                #                 "description": "Jira issue key (e.g., 'PROJ-123')",
+                #             },
+                #         },
+                #         "required": ["issue_key"],
+                #     },
+                # ),
                 Tool(
                     name="jira_get_worklog",
                     description="Get worklog entries for a Jira issue",
@@ -746,137 +746,137 @@ async def list_tools() -> list[Tool]:
                         "required": ["issue_key"],
                     },
                 ),
-                Tool(
-                    name="jira_download_attachments",
-                    description="Download attachments from a Jira issue",
-                    inputSchema={
-                        "type": "object",
-                        "properties": {
-                            "issue_key": {
-                                "type": "string",
-                                "description": "Jira issue key (e.g., 'PROJ-123')",
-                            },
-                            "target_dir": {
-                                "type": "string",
-                                "description": "Directory where attachments should be saved",
-                            },
-                        },
-                        "required": ["issue_key", "target_dir"],
-                    },
-                ),
-                Tool(
-                    name="jira_get_agile_boards",
-                    description="Get jira agile boards by name, project key, or type",
-                    inputSchema={
-                        "type": "object",
-                        "properties": {
-                            "board_name": {
-                                "type": "string",
-                                "description": "The name of board, support fuzzy search",
-                            },
-                            "project_key": {
-                                "type": "string",
-                                "description": "Jira project key (e.g., 'PROJ-123')",
-                            },
-                            "board_type": {
-                                "type": "string",
-                                "description": "The type of jira board (e.g., 'scrum', 'kanban')",
-                            },
-                            "startAt": {
-                                "type": "number",
-                                "description": "Starting index for pagination (0-based)",
-                                "default": 0,
-                            },
-                            "limit": {
-                                "type": "number",
-                                "description": "Maximum number of results (1-50)",
-                                "default": 10,
-                                "minimum": 1,
-                                "maximum": 50,
-                            },
-                        },
-                    },
-                ),
-                Tool(
-                    name="jira_get_board_issues",
-                    description="Get all issues linked to a specific board",
-                    inputSchema={
-                        "type": "object",
-                        "properties": {
-                            "board_id": {
-                                "type": "string",
-                                "description": "The id of the board (e.g., '1001')",
-                            },
-                            "jql": {
-                                "type": "string",
-                                "description": "JQL query string (Jira Query Language). Examples:\n"
-                                '- Find Epics: "issuetype = Epic AND project = PROJ"\n'
-                                '- Find issues in Epic: "parent = PROJ-123"\n'
-                                "- Find by status: \"status = 'In Progress' AND project = PROJ\"\n"
-                                '- Find by assignee: "assignee = currentUser()"\n'
-                                '- Find recently updated: "updated >= -7d AND project = PROJ"\n'
-                                '- Find by label: "labels = frontend AND project = PROJ"\n'
-                                '- Find by priority: "priority = High AND project = PROJ"',
-                            },
-                            "fields": {
-                                "type": "string",
-                                "description": (
-                                    "Comma-separated fields to return in the results. "
-                                    "Use '*all' for all fields, or specify individual "
-                                    "fields like 'summary,status,assignee,priority'"
-                                ),
-                                "default": "*all",
-                            },
-                            "startAt": {
-                                "type": "number",
-                                "description": "Starting index for pagination (0-based)",
-                                "default": 0,
-                            },
-                            "limit": {
-                                "type": "number",
-                                "description": "Maximum number of results (1-50)",
-                                "default": 10,
-                                "minimum": 1,
-                                "maximum": 50,
-                            },
-                            "expand": {
-                                "type": "string",
-                                "description": "Fields to expand in the response (e.g., 'version', 'body.storage')",
-                                "default": "version",
-                            },
-                        },
-                        "required": ["board_id", "jql"],
-                    },
-                ),
-                Tool(
-                    name="jira_get_sprints_from_board",
-                    description="Get jira sprints from board by state",
-                    inputSchema={
-                        "type": "object",
-                        "properties": {
-                            "board_id": {
-                                "type": "string",
-                                "description": "The id of board (e.g., '1000')",
-                            },
-                            "state": {
-                                "type": "string",
-                                "description": "Sprint state (e.g., 'active', 'future', 'closed')",
-                            },
-                            "startAt": {
-                                "type": "number",
-                                "description": "Starting index for pagination (0-based)",
-                                "default": 0,
-                            },
-                            "limit": {
-                                "type": "number",
-                                "description": "Maximum number of results (1-50)",
-                                "default": 10,
-                                "minimum": 1,
-                                "maximum": 50,
-                            },
-                        },
-                    },
-                ),
+                # Tool(
+                #     name="jira_download_attachments",
+                #     description="Download attachments from a Jira issue",
+                #     inputSchema={
+                #         "type": "object",
+                #         "properties": {
+                #             "issue_key": {
+                #                 "type": "string",
+                #                 "description": "Jira issue key (e.g., 'PROJ-123')",
+                #             },
+                #             "target_dir": {
+                #                 "type": "string",
+                #                 "description": "Directory where attachments should be saved",
+                #             },
+                #         },
+                #         "required": ["issue_key", "target_dir"],
+                #     },
+                # ),
+                # Tool(
+                #     name="jira_get_agile_boards",
+                #     description="Get jira agile boards by name, project key, or type",
+                #     inputSchema={
+                #         "type": "object",
+                #         "properties": {
+                #             "board_name": {
+                #                 "type": "string",
+                #                 "description": "The name of board, support fuzzy search",
+                #             },
+                #             "project_key": {
+                #                 "type": "string",
+                #                 "description": "Jira project key (e.g., 'PROJ-123')",
+                #             },
+                #             "board_type": {
+                #                 "type": "string",
+                #                 "description": "The type of jira board (e.g., 'scrum', 'kanban')",
+                #             },
+                #             "startAt": {
+                #                 "type": "number",
+                #                 "description": "Starting index for pagination (0-based)",
+                #                 "default": 0,
+                #             },
+                #             "limit": {
+                #                 "type": "number",
+                #                 "description": "Maximum number of results (1-50)",
+                #                 "default": 10,
+                #                 "minimum": 1,
+                #                 "maximum": 50,
+                #             },
+                #         },
+                #     },
+                # ),
+                # Tool(
+                #     name="jira_get_board_issues",
+                #     description="Get all issues linked to a specific board",
+                #     inputSchema={
+                #         "type": "object",
+                #         "properties": {
+                #             "board_id": {
+                #                 "type": "string",
+                #                 "description": "The id of the board (e.g., '1001')",
+                #             },
+                #             "jql": {
+                #                 "type": "string",
+                #                 "description": "JQL query string (Jira Query Language). Examples:\n"
+                #                 '- Find Epics: "issuetype = Epic AND project = PROJ"\n'
+                #                 '- Find issues in Epic: "parent = PROJ-123"\n'
+                #                 "- Find by status: \"status = 'In Progress' AND project = PROJ\"\n"
+                #                 '- Find by assignee: "assignee = currentUser()"\n'
+                #                 '- Find recently updated: "updated >= -7d AND project = PROJ"\n'
+                #                 '- Find by label: "labels = frontend AND project = PROJ"\n'
+                #                 '- Find by priority: "priority = High AND project = PROJ"',
+                #             },
+                #             "fields": {
+                #                 "type": "string",
+                #                 "description": (
+                #                     "Comma-separated fields to return in the results. "
+                #                     "Use '*all' for all fields, or specify individual "
+                #                     "fields like 'summary,status,assignee,priority'"
+                #                 ),
+                #                 "default": "*all",
+                #             },
+                #             "startAt": {
+                #                 "type": "number",
+                #                 "description": "Starting index for pagination (0-based)",
+                #                 "default": 0,
+                #             },
+                #             "limit": {
+                #                 "type": "number",
+                #                 "description": "Maximum number of results (1-50)",
+                #                 "default": 10,
+                #                 "minimum": 1,
+                #                 "maximum": 50,
+                #             },
+                #             "expand": {
+                #                 "type": "string",
+                #                 "description": "Fields to expand in the response (e.g., 'version', 'body.storage')",
+                #                 "default": "version",
+                #             },
+                #         },
+                #         "required": ["board_id", "jql"],
+                #     },
+                # ),
+                # Tool(
+                #     name="jira_get_sprints_from_board",
+                #     description="Get jira sprints from board by state",
+                #     inputSchema={
+                #         "type": "object",
+                #         "properties": {
+                #             "board_id": {
+                #                 "type": "string",
+                #                 "description": "The id of board (e.g., '1000')",
+                #             },
+                #             "state": {
+                #                 "type": "string",
+                #                 "description": "Sprint state (e.g., 'active', 'future', 'closed')",
+                #             },
+                #             "startAt": {
+                #                 "type": "number",
+                #                 "description": "Starting index for pagination (0-based)",
+                #                 "default": 0,
+                #             },
+                #             "limit": {
+                #                 "type": "number",
+                #                 "description": "Maximum number of results (1-50)",
+                #                 "default": 10,
+                #                 "minimum": 1,
+                #                 "maximum": 50,
+                #             },
+                #         },
+                #     },
+                # ),
                 Tool(
                     name="jira_get_sprint_issues",
                     description="Get jira issues from sprint",
@@ -1003,20 +1003,20 @@ async def list_tools() -> list[Tool]:
                             "required": ["issue_key", "fields"],
                         },
                     ),
-                    Tool(
-                        name="jira_delete_issue",
-                        description="Delete an existing Jira issue",
-                        inputSchema={
-                            "type": "object",
-                            "properties": {
-                                "issue_key": {
-                                    "type": "string",
-                                    "description": "Jira issue key (e.g. PROJ-123)",
-                                },
-                            },
-                            "required": ["issue_key"],
-                        },
-                    ),
+                    # Tool(
+                    #     name="jira_delete_issue",
+                    #     description="Delete an existing Jira issue",
+                    #     inputSchema={
+                    #         "type": "object",
+                    #         "properties": {
+                    #             "issue_key": {
+                    #                 "type": "string",
+                    #                 "description": "Jira issue key (e.g. PROJ-123)",
+                    #             },
+                    #         },
+                    #         "required": ["issue_key"],
+                    #     },
+                    # ),
                     Tool(
                         name="jira_add_comment",
                         description="Add a comment to a Jira issue",
@@ -1070,24 +1070,24 @@ async def list_tools() -> list[Tool]:
                             "required": ["issue_key", "time_spent"],
                         },
                     ),
-                    Tool(
-                        name="jira_link_to_epic",
-                        description="Link an existing issue to an epic",
-                        inputSchema={
-                            "type": "object",
-                            "properties": {
-                                "issue_key": {
-                                    "type": "string",
-                                    "description": "The key of the issue to link (e.g., 'PROJ-123')",
-                                },
-                                "epic_key": {
-                                    "type": "string",
-                                    "description": "The key of the epic to link to (e.g., 'PROJ-456')",
-                                },
-                            },
-                            "required": ["issue_key", "epic_key"],
-                        },
-                    ),
+                    # Tool(
+                    #     name="jira_link_to_epic",
+                    #     description="Link an existing issue to an epic",
+                    #     inputSchema={
+                    #         "type": "object",
+                    #         "properties": {
+                    #             "issue_key": {
+                    #                 "type": "string",
+                    #                 "description": "The key of the issue to link (e.g., 'PROJ-123')",
+                    #             },
+                    #             "epic_key": {
+                    #                 "type": "string",
+                    #                 "description": "The key of the epic to link to (e.g., 'PROJ-456')",
+                    #             },
+                    #         },
+                    #         "required": ["issue_key", "epic_key"],
+                    #     },
+                    # ),
                     Tool(
                         name="jira_transition_issue",
                         description="Transition a Jira issue to a new status",
